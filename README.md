@@ -3,8 +3,8 @@
 
 ## メンバーのアカウントリンク
 [e225745_大石根竜馬](https://github.com/smryouma)  
-[e225740_永田平拓幸](https://github.com/nagatahiro)
-[e225736_久保武士]()
+[e225740_永田平拓幸](https://github.com/nagatahiro)  
+[e225736_久保武士](https://github.com/takeshi0033)
 ## エレベーターピッチ
 **卒業要件を満たしているか不安で要件を満たした履修登録**をしたい  
 **琉球大学の知能情報コース生**向けの、  
