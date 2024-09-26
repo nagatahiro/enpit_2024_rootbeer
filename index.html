@@ -21,16 +21,20 @@
   
           /* 背景色が変わるクラス */
           .highlight {
-              background-color: #d3ffd3;
+              background-color: #bbdeff;
           }
       </style>
     </head>
-    <body>
+    <body >
         <h1 id="title1">履修アドバイザー</h1>
+        <div class="box29">
+          <div class="box-title">使用方法</div>
+          <p>以下の表の履修済み科目をチェックしてください</p>
+      </div>
 <center>
-<table border="1">
+<table border="1" bgcolor="#ffffff" >
     <thead>
-      <tr>
+      <tr bgcolor="#5fb3f5">
         <th>チェック</th>
         <th>科目番号</th>
         <th>授業科目名</th>
@@ -227,7 +231,7 @@
       <tr>
         <th>
           <div>
-          <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 3)"/>
+          <input type="checkbox"  onchange="toggleRowAndColumnColor(this,1, 3)"/>
           </div>
         </th>
         <td>工共212</td>
@@ -1446,12 +1450,12 @@
       // 行の色を変更
       if (checkbox.checked) {
           // 指定した列から4列先までのセルをハイライト
-          for (let i = columnIndex; i < columnIndex + 4 && i < cells.length; i++) {
+          for (let i = columnIndex-1; i < columnIndex +4 && i < cells.length; i++) {
               cells[i].classList.add('highlight');
           }
       } else {
           // 指定した列から4列先までのセルのハイライトを削除
-          for (let i = columnIndex; i < columnIndex + 4 && i < cells.length; i++) {
+          for (let i = columnIndex-1; i < columnIndex + 4 && i < cells.length; i++) {
               cells[i].classList.remove('highlight');
           }
       }

@@ -8,3 +8,27 @@
 	background-image: -webkit-linear-gradient(right, #6363ea 0%, #0071e3 100%);
 	background-image: linear-gradient(to left, #6363ea 0%, #0071e3 100%);
   }
+
+input[type="checkbox"],
+input[type="radio"] {
+	accent-color: rgb(113, 70, 255);
+	transform: scale(2.0);
+}
+
+.box29 {
+    margin: 2em 0;
+    background: #dcefff;
+}
+.box29 .box-title {
+    font-size: 1.2em;
+    background: #5fb3f5;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+.box29 p {
+    padding: 15px 20px;
+    margin: 0;
+}
