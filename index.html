@@ -4,6 +4,26 @@
         <meta charset="utf-8">
         <title>履修アドバイザー</title>
         <link rel="stylesheet" href="style.css" type="text/css">
+        <style>
+          table {
+              width: 100%;
+              border-collapse: collapse;
+          }
+  
+          table, th, td {
+              border: 1px solid black;
+          }
+  
+          th, td {
+              padding: 10px;
+              text-align: left;
+          }
+  
+          /* 背景色が変わるクラス */
+          .highlight {
+              background-color: #d3ffd3;
+          }
+      </style>
     </head>
     <body>
         <h1 id="title1">履修アドバイザー</h1>
@@ -11,10 +31,12 @@
 <table border="1">
     <thead>
       <tr>
+        <th>チェック</th>
         <th>科目番号</th>
         <th>授業科目名</th>
         <th>単位数</th>
         <th>必修</th>
+        <th>チェック</th>
         <th>科目番号</th>
         <th>授業科目名</th>
         <th>単位数</th>
@@ -23,16 +45,31 @@
     </thead>
     <tbody>
       <tr>
+        <th>
+          <div>
+          <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 1)"/>
+          </div>
+        </th>
         <td>工共100</td>
         <td>工学基礎演習</td>
         <td>2</td>
         <td>○</td>
+        <th>
+          <div>
+          <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6)"/>
+          </div>
+        </th>
         <td>知能227</td>
         <td>情報理論</td>
         <td>2</td>
         <td></td>
       </tr>
       <tr>
+        <th>
+          <div>
+          <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 1)"/>
+          </div>
+        </th>
         <td>工共101</td>
         <td>キャリアデザイン入門</td>
         <td>1</td>
@@ -43,6 +80,11 @@
         <td>○</td>
       </tr>
       <tr>
+        <th>
+          <div>
+          <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 1)"/>
+          </div>
+        </th>
         <td>工共111</td>
         <td>工業数学Ⅰ</td>
         <td>2</td>
@@ -53,6 +95,11 @@
         <td>○</td>
       </tr>
       <tr>
+        <th>
+          <div>
+          <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 1)"/>
+          </div>
+        </th>
         <td>工共112</td>
         <td>工業数学Ⅱ</td>
         <td>2</td>
@@ -63,6 +110,11 @@
         <td>○</td>
       </tr>
       <tr>
+        <th>
+          <div>
+          <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 1)"/>
+          </div>
+        </th>
         <td>工共114</td>
         <td>プログラミングⅠ</td>
         <td>2</td>
@@ -73,6 +125,11 @@
         <td></td>
       </tr>
       <tr>
+        <th>
+          <div>
+          <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 1)"/>
+          </div>
+        </th>
         <td>工共118</td>
         <td>基礎数学Ⅰ</td>
         <td>1</td>
@@ -83,6 +140,11 @@
         <td></td>
       </tr>
       <tr>
+        <th>
+          <div>
+          <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 1)"/>
+          </div>
+        </th>
         <td>工共119</td>
         <td>基礎数学Ⅱ</td>
         <td>1</td>
@@ -93,6 +155,11 @@
         <td></td>
       </tr>
       <tr>
+        <th>
+          <div>
+          <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 1)"/>
+          </div>
+        </th>
         <td>工共150</td>
         <td>工学概論</td>
         <td>2</td>
@@ -103,6 +170,11 @@
         <td></td>
       </tr>
       <tr>
+        <th>
+          <div>
+          <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 1)"/>
+          </div>
+        </th>
         <td>工共211</td>
         <td>工業数学Ⅲ</td>
         <td>2</td>
@@ -113,6 +185,11 @@
         <td></td>
       </tr>
       <tr>
+        <th>
+          <div>
+          <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 1)"/>
+          </div>
+        </th>
         <td>工共212</td>
         <td>工業数学Ⅳ</td>
         <td>2</td>
@@ -123,6 +200,11 @@
         <td></td>
       </tr>
       <tr>
+        <th>
+          <div>
+          <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 1)"/>
+          </div>
+        </th>
         <td>工共213</td>
         <td>確率及び統計</td>
         <td>2</td>
@@ -133,6 +215,11 @@
         <td></td>
       </tr>
       <tr>
+        <th>
+          <div>
+          <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 1)"/>
+          </div>
+        </th>
         <td>工共214</td>
         <td>プログラミングⅡ</td>
         <td>2</td>
@@ -143,6 +230,11 @@
         <td></td>
       </tr>
       <tr>
+        <th>
+          <div>
+          <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 1)"/>
+          </div>
+        </th>
         <td>工共300</td>
         <td>技術者の倫理</td>
         <td>2</td>
@@ -153,6 +245,11 @@
         <td></td>
       </tr>
       <tr>
+        <th>
+          <div>
+          <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 1)"/>
+          </div>
+        </th>
         <td>工共301</td>
         <td>キャリアデザイン</td>
         <td>2</td>
@@ -695,6 +792,36 @@
     </tbody>
   </table>
 </center>
+
+<script>
+  function toggleRowAndColumnColor(checkbox, columnIndex) {
+      const row = checkbox.closest('tr');
+      const table = row.closest('table');
+      const cells = row.querySelectorAll('td, th');
+
+      // 行の色を変更
+      if (checkbox.checked) {
+          // 行全体をハイライト
+          //row.classList.add('highlight');
+
+          // 指定した列から4列先までのセルをハイライト
+          for (let i = columnIndex; i < columnIndex + 4 && i < cells.length; i++) {
+              cells[i].classList.add('highlight');
+          }
+      } else {
+          // 行全体のハイライトを削除
+          //row.classList.remove('highlight');
+
+          // 指定した列から4列先までのセルのハイライトを削除
+          for (let i = columnIndex; i < columnIndex + 4 && i < cells.length; i++) {
+              cells[i].classList.remove('highlight');
+          }
+      }
+  }
+</script>
+
+
+
 </body>
 
 </html>
