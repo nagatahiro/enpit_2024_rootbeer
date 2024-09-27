@@ -23,6 +23,15 @@
           .highlight {
               background-color: #bbdeff;
           }
+          /* 特定の列の左側を太くする */
+          th.special {
+              border-left: 4px solid black;
+          }
+
+          /* 特定の行の下側を太くする */
+          tr.special-row td {
+              border-bottom: 3px solid black;
+          }
       </style>
     </head>
     <body >
@@ -40,7 +49,7 @@
         <th>授業科目名</th>
         <th>単位数</th>
         <th>必修</th>
-        <th>チェック</th>
+        <th class="special">チェック</th>
         <th>科目番号</th>
         <th>授業科目名</th>
         <th>単位数</th>
@@ -58,7 +67,7 @@
         <td>工学基礎演習</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 7)"/>
           </div>
@@ -78,7 +87,7 @@
         <td>キャリアデザイン入門</td>
         <td>1</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 2)"/>
           </div>
@@ -98,7 +107,7 @@
         <td>工業数学Ⅰ</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 2)"/>
           </div>
@@ -118,7 +127,7 @@
         <td>工業数学Ⅱ</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 2)"/>
           </div>
@@ -138,7 +147,7 @@
         <td>プログラミングⅠ</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 7)"/>
           </div>
@@ -158,7 +167,7 @@
         <td>基礎数学Ⅰ</td>
         <td>1</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 7)"/>
           </div>
@@ -178,7 +187,7 @@
         <td>基礎数学Ⅱ</td>
         <td>1</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 7)"/>
           </div>
@@ -198,7 +207,7 @@
         <td>工学概論</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 7)"/>
           </div>
@@ -218,7 +227,7 @@
         <td>工業数学Ⅲ</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 7)"/>
           </div>
@@ -238,7 +247,7 @@
         <td>工業数学Ⅳ</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 7)"/>
           </div>
@@ -258,7 +267,7 @@
         <td>確率及び統計</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 7)"/>
           </div>
@@ -278,7 +287,7 @@
         <td>プログラミングⅡ</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 7)"/>
           </div>
@@ -298,7 +307,7 @@
         <td>技術者の倫理</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 7)"/>
           </div>
@@ -318,7 +327,7 @@
         <td>キャリアデザイン</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 7)"/>
           </div>
@@ -338,7 +347,7 @@
         <td>エンジニアリングデザイン演習</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 7)"/>
           </div>
@@ -358,7 +367,7 @@
         <td>Frontiers of Engineering</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 7)"/>
           </div>
@@ -378,7 +387,7 @@
         <td>技術英語Ⅰ</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 7)"/>
           </div>
@@ -398,7 +407,7 @@
         <td>技術英語Ⅱ</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 7)"/>
           </div>
@@ -418,7 +427,7 @@
         <td>地域課題解決実践演習</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 7)"/>
           </div>
@@ -438,7 +447,7 @@
         <td>産業社会学原論Ⅰ</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 8)"/>
           </div>
@@ -457,7 +466,7 @@
         <td>産業社会学原論Ⅱ</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 8)"/>
           </div>
@@ -477,7 +486,7 @@
         <td>地域創生論</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 8)"/>
           </div>
@@ -497,7 +506,7 @@
         <td>国際協力論</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 8)"/>
           </div>
@@ -517,7 +526,7 @@
         <td>知的財産権</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 8)"/>
           </div>
@@ -537,7 +546,7 @@
         <td>品質管理</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6,8)"/>
           </div>
@@ -557,7 +566,7 @@
         <td>経営工学概論</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 8)"/>
           </div>
@@ -577,7 +586,7 @@
         <td>インターンシップⅠ</td>
         <td>1</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 8)"/>
           </div>
@@ -597,7 +606,7 @@
         <td>インターンシップⅡ</td>
         <td>1</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 8)"/>
           </div>
@@ -617,7 +626,7 @@
         <td>インターンシップⅢ</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 8)"/>
           </div>
@@ -637,7 +646,7 @@
         <td>国際インターンシップⅠ</td>
         <td>1</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -657,7 +666,7 @@
         <td>工業科教育法A</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -677,7 +686,7 @@
         <td>工業科教育法B</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -697,7 +706,7 @@
         <td>卒業研究Ⅰ</td>
         <td>3</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -717,7 +726,7 @@
         <td>卒業研究Ⅱ</td>
         <td>3</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -737,7 +746,7 @@
         <td>卒業設計または卒業研究Ⅰ</td>
         <td>3</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -757,7 +766,7 @@
         <td>卒業設計または卒業研究Ⅱ</td>
         <td>3</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -777,7 +786,7 @@
         <td>セミナーⅠ</td>
         <td>1</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -797,7 +806,7 @@
         <td>セミナーⅡ</td>
         <td>1</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -817,7 +826,7 @@
         <td>技術英語Ⅲ</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -837,7 +846,7 @@
         <td>国際インターンシップⅡ</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -857,7 +866,7 @@
         <td>職業指導（工業）</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -877,7 +886,7 @@
         <td>情報科教育法A</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -897,7 +906,7 @@
         <td>情報科教育法B</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -917,7 +926,7 @@
         <td>教職総合演習（情報）</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6)"/>
           </div>
@@ -937,7 +946,7 @@
         <td>プログラミング演習Ⅰ</td>
         <td>1</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6)"/>
           </div>
@@ -957,7 +966,7 @@
         <td>プログラミング演習Ⅱ</td>
         <td>1</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -977,7 +986,7 @@
         <td>離散数学</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -997,7 +1006,7 @@
         <td>アルゴリズムとデータ構造</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1017,7 +1026,7 @@
         <td>情報ネットワークⅠ</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1037,7 +1046,7 @@
         <td>コンピュータシステム</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1057,7 +1066,7 @@
         <td>データサイエンス基礎</td>
         <td>4</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1077,7 +1086,7 @@
         <td>プロジェクトデザイン</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1097,7 +1106,7 @@
         <td>オペレーティングシステム</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1117,7 +1126,7 @@
         <td>コンピュータアーキテクチャ</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1137,7 +1146,7 @@
         <td>データベースシステム</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1157,7 +1166,7 @@
         <td>人工知能</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1177,7 +1186,7 @@
         <td>ソフトウエア開発演習I</td>
         <td>2</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1197,7 +1206,7 @@
         <td>知能情報基礎演習Ⅰ</td>
         <td>1</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1217,7 +1226,7 @@
         <td>知能情報基礎演習Ⅱ</td>
         <td>1</td>
         <td>○</td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1237,7 +1246,7 @@
         <td>ディジタル回路</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1257,7 +1266,7 @@
         <td>情報処理技術概論</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1277,7 +1286,7 @@
         <td>情報ネットワークⅡ</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1297,7 +1306,7 @@
         <td>VLSI設計</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1317,7 +1326,7 @@
         <td>言語理論とオートマトン</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6, 5)"/>
           </div>
@@ -1337,7 +1346,7 @@
         <td>ディジタル信号処理</td>
         <td>2</td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6)"/>
           </div>
@@ -1353,7 +1362,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6)"/>
           </div>
@@ -1369,7 +1378,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <th>
+        <th class="special">
           <div>
           <input type="checkbox"  onchange="toggleRowAndColumnColor(this, 6)"/>
           </div>
@@ -1382,10 +1391,11 @@
     </tbody>
   </table>
 </center>
+<h2>あなたの現在の履修状況はこちらです。</h2>
         <!-- 配列を表示するテーブル -->
         <table>
           <thead>
-              <tr>
+              <tr bgcolor="#5fb3f5">
                   <th>科目</th>
                   <th>取得単位数</th>
                   <th>残り必要単位数</th>
@@ -1414,7 +1424,7 @@
   // 10番目：数情系
   // 11番目：数情等系
   // テーブルに配列を表示
-  const requiredUnits = [2, 7, 16, 6, 26, 4, 6, 3, 2, 1]; // 各科目ごとの必要単位数
+  const requiredUnits = [2, 7, 16, 6, 26, 4, 6, 3, 2, 1,22,37]; // 各科目ごとの必要単位数
 
   // テーブルに配列を表示
   function displayArray() {
