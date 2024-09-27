@@ -38,10 +38,18 @@
       </style>
     </head>
     <body >
-        <h1 id="title1">履修アドバイザー</h1>
+      <h1 id="title1">
+        <img src="icon.jpeg" width="80px" style="vertical-align: middle; margin-right: 10px; border-radius: 50%;">履修アドバイザー
+    </h1>
         <div class="box29">
           <div class="box-title">使用方法</div>
-          <p>以下の表の履修済み科目をチェックしてください</p>
+          <ul>
+            <li>以下の表の履修済み科目をチェックしてください。</li>
+            <li>履修状況が下の表で確認できます。</li>
+            <li>間違いがなければ下のボタン（卒業までに必要な講義一覧）を押してください。</li>
+            <li>ボタンを押すと卒業要件を満たすのに必要な講義が一覧で表示されます。</li>
+          </ul>
+
       </div>
 <center>
 <table border="1" bgcolor="#ffffff" >
@@ -1394,7 +1402,7 @@
     </tbody>
   </table>
 </center>
-<h2>あなたの現在の履修状況はこちらです。</h2>
+<h2 class="numStatus">あなたの現在の履修状況はこちらです。</h2>
         <!-- 配列を表示するテーブル -->
         <table>
           <thead>
@@ -1410,9 +1418,10 @@
         </table>
 
 
-<center>       
-<button class="btn_03" onclick="filterColumns()">条件を満たすセルを表示</button>
-</center> 
+        <center>       
+          <button class="btn_03" onclick="filterColumns()" style="margin: 20px 0;">卒業までに必要な講義一覧</button>
+      </center>
+      
 
 
         
@@ -1580,6 +1589,10 @@
     
     // 既存のテーブルの下に新しいテーブルを追加
     document.body.appendChild(newTable);
+
+    const button = document.querySelector('.btn_03'); // ボタンをクラスで選択
+button.style.backgroundColor = '#0056b3'; // ボタンの色を濃い色に変更
+button.style.color = '#fff'; // テキストの色を白に変更
 }
 
   
