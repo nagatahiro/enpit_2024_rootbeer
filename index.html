@@ -1387,7 +1387,8 @@
           <thead>
               <tr>
                   <th>科目</th>
-                  <th>カウント</th>
+                  <th>取得単位数</th>
+                  <th>残り必要単位数</th>
               </tr>
           </thead>
           <tbody id="subject-list">
@@ -1397,7 +1398,7 @@
         
 <script>
   const subjects = ["情報技術", "総合力演習", "研究実験", "数学基礎", "知能情報コア", 
-                 "工学融合", "数学基礎", "知能情報アドバンスト", "知能情報関連", "その他"];
+                 "工学融合", "数学基礎", "知能情報アドバンスト", "知能情報関連", "その他","数情系","数情等系"];
 
   const array =[0,0,0,0,0,0,0,0,0,0,0,0];
   // 0番目：情報技術
@@ -1410,6 +1411,11 @@
   // 7番目：知能情報アドバンスト
   // 8番目：知能情報関連
   // 9番目：その他
+  // 10番目：数情系
+  // 11番目：数情等系
+  // テーブルに配列を表示
+  const requiredUnits = [2, 7, 16, 6, 26, 4, 6, 3, 2, 1]; // 各科目ごとの必要単位数
+
   // テーブルに配列を表示
   function displayArray() {
       const tableBody = document.getElementById('subject-list');
@@ -1426,25 +1432,53 @@
           countCell.textContent = array[i];
           row.appendChild(countCell);
 
+          let remainingUnitsCell = document.createElement('td');
+          remainingUnitsCell.textContent = Math.max(requiredUnits[i] - array[i], 0); // 残り単位数
+          row.appendChild(remainingUnitsCell);
+
           tableBody.appendChild(row);
       }
   }
 
-  function toggleRowAndColumnColor(checkbox, columnIndex, Classification) {
-      const row = checkbox.closest('tr');
-      const table = row.closest('table');
-      const cells = row.querySelectorAll('td, th');
+  /*function displayArray() {
+      const tableBody = document.getElementById('subject-list');
+      tableBody.innerHTML = ''; // テーブルの内容をリセット
 
-      if (checkbox.checked) {
-    // Classificationの値に基づいてarrayの対応するインデックスに+1を加える
-      if (Classification >= 0 && Classification < array.length) {
-        array[Classification] += 1;
+      for (let i = 0; i < array.length; i++) {
+          let row = document.createElement('tr');
+
+          let subjectCell = document.createElement('td');
+          subjectCell.textContent = subjects[i];
+          row.appendChild(subjectCell);
+
+          let countCell = document.createElement('td');
+          countCell.textContent = array[i];
+          row.appendChild(countCell);
+
+          tableBody.appendChild(row);
       }
+  }*/
+
+  function toggleRowAndColumnColor(checkbox, columnIndex, Classification) {
+    const row = checkbox.closest('tr');
+    const table = row.closest('table');
+    const cells = row.querySelectorAll('td, th');
+
+    const cellValue = row.cells[columnIndex + 2].textContent; // 正しい数値を取得
+    const numericValue = parseFloat(cellValue) || 0; // NaNの場合は0を返す
+
+    if (checkbox.checked) {
+        if (Classification >= 0 && Classification < array.length) {
+            array[Classification] += numericValue; // 科目の単位数を追加
+            array[10] = array[3] + array[7] + array[8]; // 特定のカテゴリーの合計を計算
+            array[11] = array[5] + array[9] + array[10];
+        }
     } else {
-      // チェックが外れた場合、arrayの値を-1に戻す (必要であれば)
-      if (Classification >= 0 && Classification < array.length && array[Classification] > 0) {
-      array[Classification] -= 1;
-    }
+        if (Classification >= 0 && Classification < array.length) {
+            array[Classification] = Math.max(array[Classification] - numericValue, 0); // 単位数を減算し、0未満にはしない
+            array[10] = array[3] + array[7] + array[8];
+            array[11] = array[5] + array[9] + array[10];
+        }
     }
 
       // 行の色を変更
