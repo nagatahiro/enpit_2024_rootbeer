@@ -32,6 +32,9 @@
           tr.special-row td {
               border-bottom: 3px solid black;
           }
+          .hidden {
+            display: none; /* 非表示にするクラス */
+        }
       </style>
     </head>
     <body >
@@ -1405,8 +1408,16 @@
               <!-- 配列の要素がここに挿入されます -->
           </tbody>
         </table>
+
+
+<center>       
+<button class="btn_03" onclick="filterColumns()">条件を満たすセルを表示</button>
+</center> 
+
+
         
 <script>
+  
   const subjects = ["情報技術", "総合力演習", "研究実験", "数学基礎", "知能情報コア", 
                  "工学融合", "数学基礎", "知能情報アドバンスト", "知能情報関連", "その他","数情系","数情等系"];
 
@@ -1450,24 +1461,6 @@
       }
   }
 
-  /*function displayArray() {
-      const tableBody = document.getElementById('subject-list');
-      tableBody.innerHTML = ''; // テーブルの内容をリセット
-
-      for (let i = 0; i < array.length; i++) {
-          let row = document.createElement('tr');
-
-          let subjectCell = document.createElement('td');
-          subjectCell.textContent = subjects[i];
-          row.appendChild(subjectCell);
-
-          let countCell = document.createElement('td');
-          countCell.textContent = array[i];
-          row.appendChild(countCell);
-
-          tableBody.appendChild(row);
-      }
-  }*/
 
   function toggleRowAndColumnColor(checkbox, columnIndex, Classification) {
     const row = checkbox.closest('tr');
@@ -1507,10 +1500,94 @@
   }
 
   displayArray();
+  function filterColumns() {
+    // 既存テーブルの取得
+    const originalTable = document.querySelector('table');
+    const rows = originalTable.rows;
+    
+    // 新しいテーブルの作成
+    const newTable = document.createElement('table');
+    newTable.border = "1";
+    
+    // 新しいテーブルのヘッダーを作成
+    const header = newTable.createTHead();
+    const headerRow = header.insertRow(0);
+    const headers = ["チェック", "科目番号", "授業科目名", "単位数", "必修"];
+    
+    headers.forEach((text, index) => {
+        const th = document.createElement('th');
+        th.innerText = text;
+        headerRow.appendChild(th);
+    });
+
+    // テーブル2（履修状況）の取得
+    const subjectRows = document.getElementById('subject-list').rows;
+    
+    // 1列目から5列目と6列目から10列目を分けて処理
+    for (let i = 1; i < rows.length; i++) {
+        // 1列目から5列目をチェック
+        const checkCell1 = rows[i].cells[0].querySelector('input[type="checkbox"]');
+        let classification1 = checkCell1 ? checkCell1.getAttribute('onchange').match(/\d+/g)[1] : -1;
+        classification1 = parseInt(classification1, 10);
+        
+        if (checkCell1 && !checkCell1.checked && classification1 >= 0 && classification1 < subjectRows.length) {
+            const remainingUnits = parseInt(subjectRows[classification1].cells[2].innerText);
+            if (remainingUnits > 0) {
+                // 新しい行を作成
+                const newRow = newTable.insertRow();
+                
+                // チェックボックス列を追加
+                const newCell = newRow.insertCell(0);
+                const newCheckbox = document.createElement('input');
+                newCheckbox.type = 'checkbox';
+                newCheckbox.disabled = true;
+                newCell.appendChild(newCheckbox);
+                
+                // その他の列を追加
+                for (let j = 1; j <= 4; j++) {
+                    const cell = newRow.insertCell(j);
+                    cell.innerText = rows[i].cells[j].innerText;
+                }
+            }
+        }
+
+        // 6列目から10列目をチェック
+        const checkCell2 = rows[i].cells[5].querySelector('input[type="checkbox"]');
+        let classification2 = checkCell2 ? checkCell2.getAttribute('onchange').match(/\d+/g)[1] : -1;
+        classification2 = parseInt(classification2, 10);
+        
+        if (checkCell2 && !checkCell2.checked && classification2 >= 0 && classification2 < subjectRows.length) {
+            const remainingUnits = parseInt(subjectRows[classification2].cells[2].innerText);
+            if (remainingUnits > 0) {
+                // 新しい行を作成
+                const newRow = newTable.insertRow();
+                
+                // チェックボックス列を追加
+                const newCell = newRow.insertCell(0);
+                const newCheckbox = document.createElement('input');
+                newCheckbox.type = 'checkbox';
+                newCheckbox.disabled = true;
+                newCell.appendChild(newCheckbox);
+                
+                // その他の列を追加
+                for (let j = 6; j <= 9; j++) {
+                    const cell = newRow.insertCell(j - 5);
+                    cell.innerText = rows[i].cells[j].innerText;
+                }
+            }
+        }
+    }
+    
+    // 既存のテーブルの下に新しいテーブルを追加
+    document.body.appendChild(newTable);
+}
+
+  
+
 </script>
 
 
 
-</body>
+
 
 </html>

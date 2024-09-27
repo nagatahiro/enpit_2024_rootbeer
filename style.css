@@ -32,3 +32,18 @@ input[type="radio"] {
     padding: 15px 20px;
     margin: 0;
 }
+
+.btn_03 {
+	display: block;
+	background-color: #fff;
+  border: double 6px #99acf3;
+  color: #8fc9ff;
+  border-radius: 10px;
+  padding: 10px 30px;
+  text-decoration: none;
+  font-size: 1em;
+}
+.btn_03:hover {
+	color: #fff;
+	background: #27acd9;
+}
